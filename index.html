@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal academic homepage">
+  <title>学术主页</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ==================== 顶部导航栏 ==================== -->
+  <header id="navbar">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <a href="#" class="brand-link" data-section="intro"><!-- 在此替换为你的姓名 -->[你的名字]</a>
+      </div>
+      <button id="menu-toggle" class="menu-toggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="#" class="nav-item active" data-section="intro">基本介绍</a></li>
+          <li><a href="#" class="nav-item" data-section="undergrad">本科阶段</a></li>
+          <li><a href="#" class="nav-item disabled" data-section="phd">博士阶段（待续）</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== 主体布局 ==================== -->
+  <div id="container">
+    <!-- ========== 左侧边栏：目录树 ========== -->
+    <aside id="sidebar">
+      <div class="sidebar-inner">
+        <div class="sidebar-header">
+          <span id="sidebar-title">目录</span>
+        </div>
+        <!-- 移动端：侧边栏内的版块快捷切换 -->
+        <div class="sidebar-sections" id="sidebar-sections">
+          <a href="#" class="sidebar-section-link active" data-section="intro">基本介绍</a>
+          <a href="#" class="sidebar-section-link" data-section="undergrad">本科阶段</a>
+          <a href="#" class="sidebar-section-link disabled" data-section="phd">博士阶段</a>
+        </div>
+        <nav id="tree-nav">
+          <ul id="tree-list" class="tree">
+            <!-- 由 JavaScript 动态生成 -->
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    <!-- 移动端遮罩 -->
+    <div id="sidebar-overlay"></div>
+
+    <!-- ========== 右侧内容区 ========== -->
+    <main id="content">
+      <!-- ============================================================== -->
+      <!-- 基本介绍                                                       -->
+      <!-- ============================================================== -->
+      <div id="sec-intro" class="section active">
+
+        <!-- 关于我 -->
+        <div id="intro-about" class="subsection">
+          <h1 class="section-title">关于我</h1>
+          <div class="intro-card">
+            <div class="intro-avatar">
+              <!-- 在此替换你的照片路径，例如 src="assets/photo.jpg" -->
+              <div class="avatar-placeholder">照片</div>
+            </div>
+            <div class="intro-info">
+              <h2 class="intro-name"><!-- 姓名 -->姓名</h2>
+              <p class="intro-affiliation">
+                北京大学 · 元培学院<br>
+                <!-- 专业方向，例如：数据科学与大数据技术 / 计算机科学与技术 -->[专业方向]<br>
+                本科一年级
+              </p>
+              <p class="intro-bio">
+                <!-- 在此撰写简短的个人简介（2-4句），介绍你的学术兴趣和方向 -->
+                这是我的个人学术主页，用于记录本科阶段的学习经历、课程笔记、
+                项目实践与文献阅读，为未来的学术发展做好准备。
+              </p>
+              <div class="intro-links">
+                <a href="#" class="link-item" target="_blank">📧 Email</a>
+                <a href="#" class="link-item" target="_blank">🔗 GitHub</a>
+                <!-- 在此添加更多链接，例如 Google Scholar、个人博客等 -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 教育背景 -->
+        <div id="intro-edu" class="subsection">
+          <h2 class="subsection-title">教育背景</h2>
+          <ul class="edu-timeline">
+            <li class="edu-item">
+              <span class="edu-date">2025.9 – 今</span>
+              <span class="edu-desc">北京大学 · 元培学院 · 本科</span>
+            </li>
+            <!-- 在此添加更多教育经历 -->
+            <!-- <li class="edu-item">
+              <span class="edu-date">2022.9 – 2025.6</span>
+              <span class="edu-desc">[高中名称]</span>
+            </li> -->
+          </ul>
+        </div>
+
+        <!-- 研究兴趣 -->
+        <div id="intro-research" class="subsection">
+          <h2 class="subsection-title">研究兴趣</h2>
+          <p class="placeholder-text">
+            <!-- 在此填写你的研究兴趣方向 -->
+            待补充……
+          </p>
+        </div>
+
+        <!-- 联系方式 -->
+        <div id="intro-contact" class="subsection">
+          <h2 class="subsection-title">联系方式</h2>
+          <ul class="contact-list">
+            <li>邮箱：<!-- your-email@example.com --><span class="placeholder">[待补充]</span></li>
+            <li>GitHub：<!-- https://github.com/yourusername --><span class="placeholder">[待补充]</span></li>
+            <!-- 在此添加更多联系方式 -->
+          </ul>
+        </div>
+      </div>
+
+      <!-- ============================================================== -->
+      <!-- 本科阶段                                                       -->
+      <!-- ============================================================== -->
+      <div id="sec-undergrad" class="section">
+        <!-- 大一上 -->
+        <div id="ug-courses-1" class="subsection">
+          <h2 class="subsection-title">大一上（2025 秋）</h2>
+          <div class="course-list">
+            <!-- 每门课一个 course-entry，可按模板复制 -->
+            <div class="course-entry">
+              <h3 class="course-name">课程名称 <!-- 例如：高等数学A(上) --></h3>
+              <p class="course-meta">学分：<!-- 例如：5 -->  |  授课教师：<!-- 姓名 --></p>
+              <p class="course-note"><!-- 简短备注，可留空 --></p>
+              <div class="course-links">
+                <!-- 在此添加文件链接 -->
+                <!-- <a href="files/xxx.pdf" target="_blank">📄 笔记</a> -->
+                <!-- <a href="files/xxx.pdf" target="_blank">📋 大纲</a> -->
+              </div>
+            </div>
+            <!-- 复制上方 course-entry 添加更多课程 -->
+            <div class="course-entry placeholder-entry">
+              <p class="placeholder-text">待添加课程……</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 大一下 -->
+        <div id="ug-courses-2" class="subsection">
+          <h2 class="subsection-title">大一下（2026 春）</h2>
+          <div class="course-list">
+            <div class="course-entry">
+              <h3 class="course-name">课程名称 <!-- 例如：高等数学A(下) --></h3>
+              <p class="course-meta">学分：<!-- 学分 -->  |  授课教师：<!-- 姓名 --></p>
+              <p class="course-note"><!-- 简短备注 --></p>
+              <div class="course-links">
+                <!-- <a href="files/xxx.pdf" target="_blank">📄 笔记</a> -->
+              </div>
+            </div>
+            <div class="course-entry placeholder-entry">
+              <p class="placeholder-text">待添加课程……</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2026暑假 -->
+        <div id="ug-courses-3" class="subsection">
+          <h2 class="subsection-title">2026 暑假</h2>
+          <div class="course-list">
+            <div class="course-entry">
+              <h3 class="course-name">课程 / 项目名称</h3>
+              <p class="course-meta">时间：2026.7 – 2026.9</p>
+              <p class="course-note"><!-- 描述 --></p>
+              <div class="course-links">
+                <!-- <a href="#" target="_blank">🔗 链接</a> -->
+              </div>
+            </div>
+            <div class="course-entry placeholder-entry">
+              <p class="placeholder-text">待添加……</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 语言学习 -->
+        <div id="ug-lang" class="subsection">
+          <h2 class="subsection-title">语言学习</h2>
+          <div class="lang-list">
+            <div class="lang-entry">
+              <h3 class="lang-name">英语</h3>
+              <ul class="lang-detail">
+                <li>四级/六级：<!-- 成绩 --><span class="placeholder">[待考]</span></li>
+                <li>托福/雅思：<!-- 成绩 --><span class="placeholder">[待考]</span></li>
+                <!-- 在此添加更多语言能力证明 -->
+              </ul>
+            </div>
+            <!-- 可复制 lang-entry 添加其他语言 -->
+            <div class="lang-entry">
+              <h3 class="lang-name"><!-- 第二外语（如果有） --></h3>
+              <ul class="lang-detail">
+                <li><span class="placeholder">[待补充]</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 额外项目学习 -->
+        <div id="ug-projects" class="subsection">
+          <h2 class="subsection-title">额外项目学习</h2>
+          <div class="project-list">
+            <div class="project-entry">
+              <h3 class="project-name">项目 / 自学内容名称</h3>
+              <p class="project-meta">时间：<!-- 时间 --></p>
+              <p class="project-desc"><!-- 描述 --></p>
+              <div class="project-links">
+                <!-- <a href="#" target="_blank">🔗 GitHub</a> -->
+                <!-- <a href="#" target="_blank">📄 报告</a> -->
+              </div>
+            </div>
+            <div class="project-entry placeholder-entry">
+              <p class="placeholder-text">待添加项目……</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 文献阅读 -->
+        <div id="ug-reading" class="subsection">
+          <h2 class="subsection-title">文献阅读</h2>
+          <p class="reading-intro">此处记录本科期间阅读的学术论文与书籍。</p>
+          <div class="reading-list">
+            <div class="reading-entry">
+              <p class="reading-title"><strong>[论文标题]</strong> — [作者], [年份]</p>
+              <p class="reading-note"><!-- 阅读笔记摘要 --></p>
+              <div class="reading-links">
+                <!-- <a href="#" target="_blank">🔗 原文</a> -->
+                <!-- <a href="#" target="_blank">📝 笔记</a> -->
+              </div>
+            </div>
+            <div class="reading-entry placeholder-entry">
+              <p class="placeholder-text">待添加文献……</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================== -->
+      <!-- 博士阶段（占位）                                               -->
+      <!-- ============================================================== -->
+      <div id="sec-phd" class="section">
+        <div class="subsection">
+          <h2 class="subsection-title">博士阶段</h2>
+          <p class="placeholder-text">待续……</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- ==================== 页脚：更新日志 ==================== -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <h3>更新日志</h3>
+      <ul class="changelog">
+        <!-- 最新日志在最上方；每次更新请在下方添加新的 <li> -->
+        <li><span class="cl-date">2026.7.16</span> 个人主页开始施工 🚧</li>
+      </ul>
+      <p class="footer-copy">© 2026 [你的名字] · Powered by GitHub Pages</p>
+    </div>
+  </footer>
+
+  <!-- ==================== JavaScript ==================== -->
+  <script>
+  (function() {
+    /* ===========================
+       目录树数据结构
+       根据需要在此增删条目
+       =========================== */
+    const treeData = {
+      intro: [
+        { id: 'intro-about',  label: '关于我' },
+        { id: 'intro-edu',    label: '教育背景' },
+        { id: 'intro-research', label: '研究兴趣' },
+        { id: 'intro-contact',  label: '联系方式' }
+      ],
+      undergrad: [
+        { id: 'ug-courses',   label: '课程', children: [
+          { id: 'ug-courses-1', label: '大一上（2025秋）' },
+          { id: 'ug-courses-2', label: '大一下（2026春）' },
+          { id: 'ug-courses-3', label: '2026暑假' }
+        ]},
+        { id: 'ug-lang',      label: '语言学习' },
+        { id: 'ug-projects',  label: '额外项目学习' },
+        { id: 'ug-reading',   label: '文献阅读' }
+      ],
+      phd: []  // 博士阶段待补充
+    };
+
+    /* ===========================
+       DOM 引用
+       =========================== */
+    const navItems        = document.querySelectorAll('.nav-item:not(.disabled)');
+    const sidebarSecLinks = document.querySelectorAll('.sidebar-section-link:not(.disabled)');
+    const treeList        = document.getElementById('tree-list');
+    const sections        = document.querySelectorAll('.section');
+    const sidebar         = document.getElementById('sidebar');
+    const overlay         = document.getElementById('sidebar-overlay');
+    const menuToggle      = document.getElementById('menu-toggle');
+    const sidebarTitle    = document.getElementById('sidebar-title');
+
+    let currentSection = 'intro';
+    let activeSubId    = 'intro-about';
+
+    /* ===========================
+       渲染目录树
+       =========================== */
+    function renderTree(sectionKey) {
+      treeList.innerHTML = '';
+      const items = treeData[sectionKey] || [];
+      items.forEach(function(item) {
+        const li = document.createElement('li');
+        li.className = 'tree-item';
+
+        const a = document.createElement('a');
+        a.href = '#';
+        a.className = 'tree-link';
+        a.dataset.id = item.id;
+        a.textContent = item.label;
+
+        // 如果有子项，添加展开/折叠按钮
+        if (item.children && item.children.length > 0) {
+          a.classList.add('has-children');
+          const toggle = document.createElement('span');
+          toggle.className = 'tree-toggle expanded';
+          toggle.innerHTML = '▾';
+          a.prepend(toggle);
+
+          const ul = document.createElement('ul');
+          ul.className = 'tree-sub expanded';
+          item.children.forEach(function(child) {
+            const subLi = document.createElement('li');
+            subLi.className = 'tree-item tree-item--child';
+            const subA = document.createElement('a');
+            subA.href = '#';
+            subA.className = 'tree-link tree-link--child';
+            subA.dataset.id = child.id;
+            subA.textContent = child.label;
+            subLi.appendChild(subA);
+            ul.appendChild(subLi);
+          });
+          li.appendChild(a);
+          li.appendChild(ul);
+        } else {
+          li.appendChild(a);
+        }
+
+        treeList.appendChild(li);
+      });
+
+      // 更新侧边栏标题
+      const titles = { intro: '基本介绍', undergrad: '本科阶段', phd: '博士阶段' };
+      sidebarTitle.textContent = titles[sectionKey] || '目录';
+
+      // 高亮当前项
+      highlightTree(activeSubId);
+
+      // 绑定事件
+      bindTreeEvents();
+    }
+
+    /* ===========================
+       绑定树的点击事件
+       =========================== */
+    function bindTreeEvents() {
+      treeList.querySelectorAll('.tree-link.has-children').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const toggle = link.querySelector('.tree-toggle');
+          const sub = link.nextElementSibling;
+          if (!sub) return;
+
+          const isExpanded = sub.classList.contains('expanded');
+          if (isExpanded) {
+            sub.classList.remove('expanded');
+            toggle.classList.remove('expanded');
+            toggle.innerHTML = '▸';
+          } else {
+            sub.classList.add('expanded');
+            toggle.classList.add('expanded');
+            toggle.innerHTML = '▾';
+          }
+        });
+      });
+
+      treeList.querySelectorAll('.tree-link:not(.has-children)').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const id = link.dataset.id;
+          if (id) {
+            activeSubId = id;
+            scrollToSub(id);
+            highlightTree(id);
+            // 移动端关闭侧边栏
+            closeSidebar();
+          }
+        });
+      });
+    }
+
+    /* ===========================
+       高亮目录树当前项
+       =========================== */
+    function highlightTree(id) {
+      treeList.querySelectorAll('.tree-link').forEach(function(a) {
+        a.classList.remove('active');
+      });
+      const target = treeList.querySelector('[data-id="' + id + '"]');
+      if (target) target.classList.add('active');
+
+      // 如果目标在折叠的子列表中，展开它
+      if (target) {
+        const parentSub = target.closest('.tree-sub');
+        if (parentSub) {
+          parentSub.classList.add('expanded');
+          const parentLink = parentSub.previousElementSibling;
+          if (parentLink) {
+            const toggle = parentLink.querySelector('.tree-toggle');
+            if (toggle) {
+              toggle.classList.add('expanded');
+              toggle.innerHTML = '▾';
+            }
+          }
+        }
+      }
+    }
+
+    /* ===========================
+       滚动到内容区对应子块
+       =========================== */
+    function scrollToSub(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    /* ===========================
+       切换大板块（导航栏 & 侧边栏版块链接点击）
+       =========================== */
+    function switchSection(sectionKey) {
+      if (!sectionKey) return;
+
+      // 更新顶部导航栏高亮
+      navItems.forEach(function(n) { n.classList.remove('active'); });
+      var navTarget = document.querySelector('.nav-item[data-section="' + sectionKey + '"]');
+      if (navTarget) navTarget.classList.add('active');
+
+      // 更新侧边栏版块链接高亮
+      sidebarSecLinks.forEach(function(l) { l.classList.remove('active'); });
+      var sideTarget = document.querySelector('.sidebar-section-link[data-section="' + sectionKey + '"]');
+      if (sideTarget) sideTarget.classList.add('active');
+
+      // 切换内容区
+      sections.forEach(function(sec) { sec.classList.remove('active'); });
+      var targetSec = document.getElementById('sec-' + sectionKey);
+      if (targetSec) targetSec.classList.add('active');
+
+      currentSection = sectionKey;
+
+      // 设置默认子项（第一个叶子节点）
+      var items = treeData[sectionKey] || [];
+      if (items.length > 0) {
+        activeSubId = findFirstLeaf(items);
+      } else {
+        activeSubId = '';
+      }
+
+      // 重新渲染目录树
+      renderTree(sectionKey);
+
+      // 关闭移动端侧边栏
+      closeSidebar();
+
+      // 滚动到顶部
+      document.getElementById('content').scrollTop = 0;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    navItems.forEach(function(item) {
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        switchSection(item.dataset.section);
+      });
+    });
+
+    sidebarSecLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        switchSection(link.dataset.section);
+      });
+    });
+
+    function findFirstLeaf(items) {
+      for (var i = 0; i < items.length; i++) {
+        if (items[i].children && items[i].children.length > 0) {
+          return items[i].children[0].id;
+        }
+        return items[i].id;
+      }
+      return '';
+    }
+
+    /* ===========================
+       移动端侧边栏开关
+       =========================== */
+    function openSidebar() {
+      sidebar.classList.add('open');
+      overlay.classList.add('show');
+      menuToggle.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSidebar() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('show');
+      menuToggle.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    menuToggle.addEventListener('click', function() {
+      if (sidebar.classList.contains('open')) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
+    });
+
+    overlay.addEventListener('click', closeSidebar);
+
+    // 窗口 resize 时，大屏自动关闭侧边栏浮层
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        closeSidebar();
+      }
+    });
+
+    /* ===========================
+       初始化
+       =========================== */
+    renderTree('intro');
+    highlightTree('intro-about');
+  })();
+  </script>
+</body>
+</html>
