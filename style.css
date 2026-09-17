@@ -382,6 +382,15 @@ img {
   flex-shrink: 0;
 }
 
+.avatar-img {
+  width: 135px;
+  height: 180px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  box-shadow: var(--shadow-sm);
+}
+
 .avatar-placeholder {
   width: 120px;
   height: 150px;
