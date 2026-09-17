@@ -658,8 +658,100 @@ img {
   border-bottom-color: var(--accent);
 }
 
+/* -------------------- 中英双语辅助样式 -------------------- */
+/* .en：紧跟中文的小号英文，灰色、斜体化处理，避免与中文重叠穿模 */
+.en {
+  font-size: 0.72em;
+  color: var(--text-muted);
+  font-style: italic;
+  font-weight: 400;
+  margin-left: 4px;
+  letter-spacing: 0.01em;
+}
+.en:empty { display: none; }
+
+/* 标题中的英文缩小并允许换行，防止溢出穿模 */
+.subsection-title .en,
+.section-title .en {
+  font-size: 0.62em;
+  white-space: nowrap;
+}
+.nav-item .en { font-size: 0.72em; }
+.nav-item .en::before { content: '·'; margin-right: 4px; font-style: normal; }
+
+/* 移动端隐藏英文，防止导航与标题换行错乱 */
+@media (max-width: 768px) {
+  .nav-item .en,
+  .sidebar-section-link .en { display: none; }
+  .subsection-title .en { display: none; }
+}
+
+/* -------------------- 大二上：可折叠文件夹 -------------------- */
+details.folder-group {
+  margin-bottom: 14px;
+  padding: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+details.folder-group > summary {
+  list-style: none;              /* 隐藏默认三角 */
+  cursor: pointer;
+  padding: 12px 16px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--accent);
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 2px;
+  transition: background 0.15s;
+  user-select: none;
+}
+details.folder-group > summary::-webkit-details-marker { display: none; }
+details.folder-group > summary:hover { background: var(--bg-hover); }
+
+/* 覆盖旧版 .folder-name 的 margin，避免 summary 布局偏移 */
+summary.folder-name { margin-bottom: 0; }
+
+/* 展开/收起箭头 */
+details.folder-group > summary::after {
+  content: '▸';
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  transition: transform 0.2s;
+  align-self: center;
+}
+details.folder-group[open] > summary::after {
+  transform: rotate(90deg);
+}
+
+/* 文件数徽章 */
+.folder-count {
+  display: inline-block;
+  min-width: 20px;
+  padding: 0 6px;
+  margin-left: 6px;
+  border-radius: 10px;
+  background: var(--bg-active);
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* 折叠区内容 */
+details.folder-group .course-list {
+  padding: 0 12px 12px;
+}
+
 /* ================================================================ */
-/* 大二上文件夹分组                                                  */
+/* 大二上文件夹分组（旧版，已被 details 版取代，保留兼容）          */
 /* ================================================================ */
 .folder-group {
   margin-bottom: 22px;

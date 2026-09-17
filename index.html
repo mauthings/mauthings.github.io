@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Personal academic homepage">
-  <title>学术主页</title>
+  <title>刘宇程 · 个人学术主页 | Academic Homepage</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,8 +19,8 @@
       </button>
       <nav id="nav-menu">
         <ul class="nav-list">
-          <li><a href="#" class="nav-item active" data-section="intro">基本介绍</a></li>
-          <li><a href="#" class="nav-item" data-section="undergrad">本科阶段</a></li>
+          <li><a href="#" class="nav-item active" data-section="intro">基本介绍 <span class="en">Introduction</span></a></li>
+          <li><a href="#" class="nav-item" data-section="undergrad">本科阶段 <span class="en">Undergraduate</span></a></li>
         </ul>
       </nav>
     </div>
@@ -32,12 +32,12 @@
     <aside id="sidebar">
       <div class="sidebar-inner">
         <div class="sidebar-header">
-          <span id="sidebar-title">目录</span>
+          <span id="sidebar-title">目录 <span class="en">Contents</span></span>
         </div>
         <!-- 移动端：侧边栏内的版块快捷切换 -->
         <div class="sidebar-sections" id="sidebar-sections">
-          <a href="#" class="sidebar-section-link active" data-section="intro">基本介绍</a>
-          <a href="#" class="sidebar-section-link" data-section="undergrad">本科阶段</a>
+          <a href="#" class="sidebar-section-link active" data-section="intro">基本介绍 <span class="en">Introduction</span></a>
+          <a href="#" class="sidebar-section-link" data-section="undergrad">本科阶段 <span class="en">Undergraduate</span></a>
         </div>
         <nav id="tree-nav">
           <ul id="tree-list" class="tree">
@@ -58,7 +58,7 @@
 
         <!-- 关于我 -->
         <div id="intro-about" class="subsection">
-          <h1 class="section-title">关于我</h1>
+          <h1 class="section-title">关于我 <span class="en">About Me</span></h1>
           <div class="intro-card">
             <div class="intro-avatar">
               <img src="assets/avatar.jpg" alt="刘宇程" class="avatar-img">
@@ -66,14 +66,15 @@
             <div class="intro-info">
               <h2 class="intro-name">刘宇程</h2>
               <p class="intro-affiliation">
-                北京大学 · 元培学院<br>
-                集成电路设计与集成系统<br>
-                2025级本科生
+                北京大学 · 元培学院 <span class="en">Peking University · Yuanpei College</span><br>
+                集成电路设计与集成系统 <span class="en">Integrated Circuits Design &amp; Integrated Systems</span><br>
+                2025级本科生 <span class="en">Undergraduate, Class of 2025</span>
               </p>
               <p class="intro-bio">
-                <!-- 在此撰写简短的个人简介（2-4句），介绍你的学术兴趣和方向 -->
                 这是我的个人学术主页，用于记录本科阶段的学习经历、课程笔记、
-                项目实践与文献阅读，为未来的学术发展做好准备。
+                项目实践与文献阅读，为未来的学术发展做好准备。<br>
+                <span class="en">This is my personal academic homepage, documenting my coursework, lecture notes,
+                projects, and reading throughout undergraduate study.</span>
               </p>
               <div class="intro-links">
                 <a href="mailto:2500017829@stu.pku.edu.cn" class="link-item">📧 Email</a>
@@ -85,33 +86,34 @@
 
         <!-- 教育背景 -->
         <div id="intro-edu" class="subsection">
-          <h2 class="subsection-title">教育背景</h2>
+          <h2 class="subsection-title">教育背景 <span class="en">Education</span></h2>
           <ul class="edu-timeline">
             <li class="edu-item">
-              <span class="edu-date">2025.9 – 今</span>
-              <span class="edu-desc">北京大学 · 元培学院 · 本科</span>
+              <span class="edu-date">2025.9 – 至今</span>
+              <span class="edu-desc">北京大学 · 元培学院 · 本科 <span class="en">Peking University, Yuanpei College</span></span>
             </li>
             
             <li class="edu-item">
               <span class="edu-date">2022.9 – 2025.6</span>
-              <span class="edu-desc">[成都市第七中学]</span>
-            </li> -->
+              <span class="edu-desc">成都市第七中学 <span class="en">Chengdu No.7 High School</span></span>
+            </li> 
           </ul>
         </div>
 
         <!-- 研究兴趣 -->
         <div id="intro-research" class="subsection">
-          <h2 class="subsection-title">研究兴趣</h2>
+          <h2 class="subsection-title">研究兴趣 <span class="en">Research Interests</span></h2>
           <p class="research-text">
-            <strong>集成电路设计自动化（Electronic Design Automation, EDA）</strong>
+            <strong>集成电路设计自动化（EDA）</strong>：物理设计自动化（布局、布线、逻辑综合）及其与机器学习、组合优化方法的结合。<br>
+            <span class="en"><strong>Electronic Design Automation (EDA)</strong>: physical design automation (placement, routing, logic synthesis), and its interplay with machine learning and combinatorial optimization.</span>
           </p>
         </div>
 
         <!-- 联系方式 -->
         <div id="intro-contact" class="subsection">
-          <h2 class="subsection-title">联系方式</h2>
+          <h2 class="subsection-title">联系方式 <span class="en">Contact</span></h2>
           <ul class="contact-list">
-            <li>邮箱：<a href="mailto:2500017829@stu.pku.edu.cn">2500017829@stu.pku.edu.cn</a></li>
+            <li>邮箱 Email：<a href="mailto:2500017829@stu.pku.edu.cn">2500017829@stu.pku.edu.cn</a></li>
             <li>GitHub：<a href="https://github.com/mauthings" target="_blank">github.com/mauthings</a></li>
           </ul>
         </div>
@@ -123,22 +125,22 @@
       <div id="sec-undergrad" class="section">
         <!-- 大一上 -->
         <div id="ug-courses-1" class="subsection">
-          <h2 class="subsection-title">大一上（2025 秋）</h2>
+          <h2 class="subsection-title">大一上（2025 秋）<span class="en">Year 1 · Fall 2025</span></h2>
           <div class="course-list">
             <div class="course-entry">
-              <h3 class="course-name">高等数学 A1</h3>
+              <h3 class="course-name">高等数学 A1 <span class="en">Advanced Mathematics A1</span></h3>
               <div class="course-links">
                 <a href="files/ug/y1-fall/math-a1-notes.pdf" download="高等数学A1课堂笔记.pdf">📄 课堂笔记</a>
               </div>
             </div>
             <div class="course-entry">
-              <h3 class="course-name">线性代数 A1</h3>
+              <h3 class="course-name">线性代数 A1 <span class="en">Linear Algebra A1</span></h3>
               <div class="course-links">
                 <a href="files/ug/y1-fall/linalg-a1-notes.pdf" download="线性代数A1课堂笔记.pdf">📄 课堂笔记</a>
               </div>
             </div>
             <div class="course-entry">
-              <h3 class="course-name">CET-4 成绩单</h3>
+              <h3 class="course-name">CET-4：662 <span class="en">Score Report</span></h3>
               <div class="course-links">
                 <a href="files/ug/y1-fall/cet4.png" download="CET4成绩单.png">🖼 成绩单</a>
               </div>
@@ -148,17 +150,17 @@
 
         <!-- 大一下 -->
         <div id="ug-courses-2" class="subsection">
-          <h2 class="subsection-title">大一下（2026 春）</h2>
+          <h2 class="subsection-title">大一下（2026 春）<span class="en">Year 1 · Spring 2026</span></h2>
           <div class="course-list">
             <div class="course-entry">
-              <h3 class="course-name">程序设计与算法 · 魔兽世界大作业</h3>
+              <h3 class="course-name">程序设计 · 魔兽世界大作业 <span class="en">Programming · Warcraft Project</span></h3>
               <div class="course-links">
                 <a href="files/ug/y1-spring/warcraft.cpp" download="魔兽世界大作业.cpp">💻 源代码</a>
               </div>
             </div>
 
             <div class="course-entry">
-              <h3 class="course-name">CET-6 成绩单</h3>
+              <h3 class="course-name">CET-6：624 <span class="en">Score Report</span></h3>
               <div class="course-links">
                 <a href="files/ug/y1-spring/cet6.png" download="CET6成绩单.png">🖼 成绩单</a>
               </div>
@@ -168,10 +170,10 @@
 
         <!-- 大一学年成绩单 -->
         <div id="ug-courses-1y" class="subsection">
-          <h2 class="subsection-title">大一学年成绩单</h2>
+          <h2 class="subsection-title">大一学年成绩单 <span class="en">Year 1 Transcript</span></h2>
           <div class="course-list">
             <div class="course-entry">
-              <h3 class="course-name">大一学年（2025–2026）成绩单</h3>
+              <h3 class="course-name">大一学年（2025–2026）成绩单 <span class="en">Academic Year 2025–2026</span></h3>
               <div class="course-links">
                 <a href="files/ug/y1/transcript.pdf" download="大一学年成绩单.pdf">📋 成绩单</a>
               </div>
@@ -181,58 +183,58 @@
 
         <!-- 2026暑假 -->
         <div id="ug-courses-3" class="subsection">
-          <h2 class="subsection-title">2026 暑假</h2>
+          <h2 class="subsection-title">2026 暑假 <span class="en">Summer 2026</span></h2>
           <div class="course-list">
             <div class="course-entry placeholder-entry">
-              <p class="placeholder-text">西班牙语学习……</p>
+              <p class="placeholder-text">西班牙语学习 Spanish Learning……</p>
             </div>
           </div>
         </div>
 
         <!-- 大二上 -->
         <div id="ug-courses-4" class="subsection">
-          <h2 class="subsection-title">大二上（2026 秋）</h2>
+          <h2 class="subsection-title">大二上（2026 秋）<span class="en">Year 2 · Fall 2026</span></h2>
 
-          <div class="folder-group">
-            <h3 class="folder-name">📁 Handbook of Algorithms for Physical Design Automation（读书笔记）</h3>
+          <details class="folder-group" open>
+            <summary class="folder-name">📁 Handbook of Algorithms for Physical Design Automation <span class="en">Reading Notes</span> <span class="folder-count">1</span></summary>
             <div class="course-list">
               <div class="course-entry">
-                <h4 class="course-name">Part 1 笔记</h4>
+                <h4 class="course-name">Part 1 笔记 <span class="en">Part 1 Notes</span></h4>
                 <div class="course-links">
                   <a href="files/ug/y2-fall/handbook-apda/part-1-notes.pdf" download="Handbook_of_APDA_Part1笔记.pdf">📄 笔记</a>
                 </div>
               </div>
             </div>
-          </div>
+          </details>
 
-          <div class="folder-group">
-            <h3 class="folder-name">📁 VLSI CAD: Logic to Layout（网课笔记）</h3>
+          <details class="folder-group" open>
+            <summary class="folder-name">📁 VLSI CAD: Logic to Layout <span class="en">Course Notes</span> <span class="folder-count">1</span></summary>
             <div class="course-list">
               <div class="course-entry">
-                <h4 class="course-name">Lecture 1 &amp; 2 笔记</h4>
+                <h4 class="course-name">Lecture 1 &amp; 2 笔记 <span class="en">Lecture 1 &amp; 2 Notes</span></h4>
                 <div class="course-links">
                   <a href="files/ug/y2-fall/vlsi-cad/lec-1-2-notes.pdf" download="VLSI_CAD_Lec1-2笔记.pdf">📄 笔记</a>
                 </div>
               </div>
             </div>
-          </div>
+          </details>
 
-          <div class="folder-group">
-            <h3 class="folder-name">📁 论文阅读（Paper Reading Notes）</h3>
+          <details class="folder-group">
+            <summary class="folder-name">📁 论文阅读 <span class="en">Paper Reading Notes</span> <span class="folder-count">0</span></summary>
             <div class="course-list">
               <div class="course-entry placeholder-entry">
-                <p class="placeholder-text">待添加论文笔记……</p>
+                <p class="placeholder-text">待添加论文笔记 To be added……</p>
               </div>
             </div>
-          </div>
+          </details>
         </div>
 
         <!-- 额外项目学习 -->
         <div id="ug-projects" class="subsection">
-          <h2 class="subsection-title">额外项目学习</h2>
+          <h2 class="subsection-title">额外项目学习 <span class="en">Extracurricular Projects</span></h2>
           <div class="project-list">
             <div class="project-entry">
-              <h3 class="project-name">项目 / 自学内容名称</h3>
+              <h3 class="project-name">项目 / 自学内容名称 <span class="en">Project</span></h3>
               <p class="project-meta">时间：<!-- 时间 --></p>
               <p class="project-desc"><!-- 描述 --></p>
               <div class="project-links">
@@ -248,8 +250,8 @@
 
         <!-- 文献阅读 -->
         <div id="ug-reading" class="subsection">
-          <h2 class="subsection-title">文献阅读</h2>
-          <p class="reading-intro">此处记录本科期间阅读的学术论文与书籍。</p>
+          <h2 class="subsection-title">文献阅读 <span class="en">Reading</span></h2>
+          <p class="reading-intro">此处记录本科期间阅读的学术论文与书籍。<span class="en">Academic papers and books read during undergraduate study.</span></p>
           <div class="reading-list">
             <div class="reading-entry">
               <p class="reading-title"><strong>[论文标题]</strong> — [作者], [年份]</p>
@@ -271,10 +273,11 @@
   <!-- ==================== 页脚：更新日志 ==================== -->
   <footer id="footer">
     <div class="footer-inner">
-      <h3>更新日志</h3>
-      <ul class="changelog">
-        <!-- 最新日志在最上方；每次更新请在下方添加新的 <li> -->
-        <li><span class="cl-date">2026.9.17</span> 整理主页结构，加入学习笔记与成绩单，完善个人信息</li>
+      <h3>更新日志 <span class="en">Changelog</span></h3>
+              <ul class="changelog">
+                <!-- 最新日志在最上方；每次更新请在下方添加新的 <li> -->
+                <li><span class="cl-date">2026.9.17</span> 主页双语化；大二上笔记改为可折叠文件夹；更新四六级成绩</li>
+                <li><span class="cl-date">2026.9.17</span> 整理主页结构，加入学习笔记与成绩单，完善个人信息</li>
         <li><span class="cl-date">2026.7.16</span> 个人主页开始施工 🚧</li>
       </ul>
       <p class="footer-copy">© 2026 刘宇程 · Powered by GitHub Pages</p>
@@ -290,21 +293,21 @@
        =========================== */
     const treeData = {
       intro: [
-        { id: 'intro-about',  label: '关于我' },
-        { id: 'intro-edu',    label: '教育背景' },
-        { id: 'intro-research', label: '研究兴趣' },
-        { id: 'intro-contact',  label: '联系方式' }
+        { id: 'intro-about',  label: '关于我 About' },
+        { id: 'intro-edu',    label: '教育背景 Education' },
+        { id: 'intro-research', label: '研究兴趣 Research' },
+        { id: 'intro-contact',  label: '联系方式 Contact' }
       ],
       undergrad: [
-        { id: 'ug-courses',   label: '课程', children: [
+        { id: 'ug-courses',   label: '课程 Courses', children: [
           { id: 'ug-courses-1',  label: '大一上（2025秋）' },
           { id: 'ug-courses-2',  label: '大一下（2026春）' },
           { id: 'ug-courses-1y', label: '大一学年成绩单' },
-          { id: 'ug-courses-3',  label: '2026暑假' },
+          { id: 'ug-courses-3',  label: '2026暑假 Summer' },
           { id: 'ug-courses-4',  label: '大二上（2026秋）' }
         ]},
-        { id: 'ug-projects',  label: '额外项目学习' },
-        { id: 'ug-reading',   label: '文献阅读' }
+        { id: 'ug-projects',  label: '额外项目学习 Projects' },
+        { id: 'ug-reading',   label: '文献阅读 Reading' }
       ]
     };
 
@@ -370,7 +373,7 @@
       });
 
       // 更新侧边栏标题
-      const titles = { intro: '基本介绍', undergrad: '本科阶段' };
+      const titles = { intro: '基本介绍 Introduction', undergrad: '本科阶段 Undergraduate' };
       sidebarTitle.textContent = titles[sectionKey] || '目录';
 
       // 高亮当前项
