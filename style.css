@@ -285,7 +285,7 @@ img {
   transition: max-height 0.25s ease;
 }
 .tree-sub.expanded {
-  max-height: 300px;
+  max-height: 600px;
 }
 
 .tree-link--child {
@@ -345,6 +345,10 @@ img {
 
 .subsection {
   margin-bottom: 40px;
+}
+.subsection,
+.book-card {
+  scroll-margin-top: calc(var(--nav-height) + 20px);
 }
 .subsection-title {
   font-size: 1.2rem;
@@ -486,8 +490,8 @@ img {
 /* 课程                                                             */
 /* ================================================================ */
 .course-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: 14px;
 }
 
@@ -519,7 +523,22 @@ img {
 .course-links {
   display: flex;
   flex-wrap: wrap;
+  align-items: baseline;
   gap: 10px;
+}
+.download-note {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+.download-note .en {
+  display: block;
+  margin-left: 0;
+  font-size: 0.9em;
+}
+.semester-hint {
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
 }
 .course-links a {
   font-size: 0.82rem;
@@ -646,6 +665,7 @@ img {
 
 .reading-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 .reading-links a {
@@ -662,7 +682,7 @@ img {
 /* .en：紧跟中文的小号英文，灰色、斜体化处理，避免与中文重叠穿模 */
 .en {
   font-size: 0.72em;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-style: italic;
   font-weight: 400;
   margin-left: 4px;
@@ -674,16 +694,17 @@ img {
 .subsection-title .en,
 .section-title .en {
   font-size: 0.62em;
-  white-space: nowrap;
 }
 .nav-item .en { font-size: 0.72em; }
 .nav-item .en::before { content: '·'; margin-right: 4px; font-style: normal; }
 
-/* 移动端隐藏英文，防止导航与标题换行错乱 */
+/* 移动端将双语标题分行显示 */
 @media (max-width: 768px) {
-  .nav-item .en,
-  .sidebar-section-link .en { display: none; }
-  .subsection-title .en { display: none; }
+  .sidebar-section-link .en,
+  .subsection-title .en {
+    display: block;
+    margin-left: 0;
+  }
 }
 
 /* -------------------- 大二上：可折叠文件夹 -------------------- */
@@ -704,10 +725,10 @@ details.folder-group > summary {
   font-size: 0.92rem;
   font-weight: 600;
   color: var(--accent);
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 2px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 10px;
   transition: background 0.15s;
   user-select: none;
 }
@@ -716,6 +737,20 @@ details.folder-group > summary:hover { background: var(--bg-hover); }
 
 /* 覆盖旧版 .folder-name 的 margin，避免 summary 布局偏移 */
 summary.folder-name { margin-bottom: 0; }
+.folder-label {
+  overflow-wrap: anywhere;
+}
+.folder-label .en {
+  display: block;
+  margin: 3px 0 0;
+  font-size: 0.8em;
+}
+summary:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
 
 /* 展开/收起箭头 */
 details.folder-group > summary::after {
@@ -748,6 +783,137 @@ details.folder-group[open] > summary::after {
 /* 折叠区内容 */
 details.folder-group .course-list {
   padding: 0 12px 12px;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+details.folder-group .course-entry {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 18px;
+  background: var(--bg-main);
+}
+
+/* ================================================================ */
+/* 摸鱼时间：书架与 Markdown 笔记                                   */
+/* ================================================================ */
+.book-list {
+  display: grid;
+  gap: 22px;
+}
+.book-card {
+  min-width: 0;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.book-overview {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+}
+.book-cover {
+  width: 108px;
+  height: 154px;
+  object-fit: contain;
+  flex-shrink: 0;
+  background: var(--bg-main);
+  box-shadow: var(--shadow-md);
+}
+.book-info {
+  min-width: 0;
+}
+.book-title {
+  font-size: 1.14rem;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.book-title .en {
+  display: block;
+  margin: 3px 0 0;
+  font-size: 0.78em;
+}
+.book-meta {
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  margin-bottom: 14px;
+}
+.book-meta .en {
+  display: block;
+  margin-left: 0;
+  font-size: 0.9em;
+}
+.book-notes > summary {
+  padding: 10px 24px;
+  border-top: 1px solid var(--border-light);
+  color: var(--link-color);
+  cursor: pointer;
+  font-size: 0.88rem;
+}
+.book-notes > summary:hover {
+  background: var(--bg-hover);
+}
+.markdown-body {
+  padding: 24px;
+  border-top: 1px solid var(--border-light);
+  background: var(--bg-main);
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin: 1.4em 0 0.6em;
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+.markdown-body h1 { font-size: 1.3em; }
+.markdown-body h2 { font-size: 1.15em; }
+.markdown-body > :first-child { margin-top: 0; }
+.markdown-body p { margin: 0.7em 0; }
+.markdown-body blockquote {
+  margin: 1em 0;
+  padding: 4px 16px;
+  border-left: 3px solid var(--accent-light);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+}
+.markdown-body ul,
+.markdown-body ol {
+  margin: 0.7em 0;
+  padding-left: 1.5em;
+}
+.markdown-body ul { list-style: disc; }
+.markdown-body hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 1.6em 0;
+}
+.markdown-body pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  padding: 12px;
+  background: var(--bg-card);
+}
+.markdown-body code { font-family: var(--font-mono); font-size: 0.9em; }
+.markdown-body button {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg-sidebar);
+  color: var(--link-color);
+  padding: 6px 12px;
+  font: inherit;
+  cursor: pointer;
 }
 
 /* ================================================================ */
@@ -826,6 +992,11 @@ details.folder-group .course-list {
   margin-right: 8px;
   font-family: var(--font-mono);
   font-size: 0.8rem;
+}
+.changelog .en {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 0.9em;
 }
 
 .footer-copy {
@@ -956,4 +1127,17 @@ details.folder-group .course-list {
     flex-direction: column;
     gap: 2px;
   }
+  .book-overview {
+    gap: 16px;
+    padding: 18px 16px;
+    align-items: flex-start;
+  }
+  .book-cover {
+    width: 80px;
+    height: 116px;
+  }
+  .book-title { font-size: 1rem; }
+  .book-notes > summary { padding: 10px 16px; }
+  .markdown-body { padding: 18px 16px; }
+  details.folder-group > summary { padding: 12px; }
 }
