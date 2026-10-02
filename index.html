@@ -114,6 +114,18 @@
             <li>微信 WeChat：Emmanuel_Lau</li>
           </ul>
         </div>
+
+        <!-- 更新日志：仅在基本介绍中显示 -->
+        <div id="intro-changelog" class="subsection">
+          <h2 class="subsection-title">更新日志 <span class="en">Changelog</span></h2>
+          <ul class="changelog">
+            <!-- 最新日志在最上方 -->
+            <li><span class="cl-date">2026.10.2</span> 加入“摸鱼时间”与读书笔记；优化各学期内容布局；补充课程资料与讲座笔记；加入微信联系方式。<span class="en">Added Leisure and reading notes; improved semester layouts; updated course materials, lecture notes, and WeChat contact.</span></li>
+            <li><span class="cl-date">2026.9.17</span> 主页双语化；大二上笔记改为可折叠文件夹；更新四六级成绩。<span class="en">Added bilingual text and collapsible Year 2 course folders; updated CET scores.</span></li>
+            <li><span class="cl-date">2026.9.17</span> 整理主页结构，加入学习笔记与成绩单，完善个人信息。<span class="en">Organized the homepage; added study notes, transcripts, and profile details.</span></li>
+            <li><span class="cl-date">2026.7.16</span> 个人主页开始施工 🚧 <span class="en">Homepage construction began.</span></li>
+          </ul>
+        </div>
       </div>
 
       <!-- ============================================================== -->
@@ -167,9 +179,9 @@
           </div>
         </div>
 
-        <!-- 大一学年成绩单 -->
+        <!-- 大一学年成果 -->
         <div id="ug-courses-1y" class="subsection">
-          <h2 class="subsection-title">大一学年成绩单 <span class="en">Year 1 Transcript</span></h2>
+          <h2 class="subsection-title">大一学年成果 <span class="en">Year 1 Achievements</span></h2>
           <div class="course-list">
             <div class="course-entry">
               <h3 class="course-name">大一学年（2025–2026）成绩单 <span class="en">Academic Year 2025–2026</span></h3>
@@ -278,12 +290,18 @@
         <div id="ug-reading" class="subsection">
           <h2 class="subsection-title">文献阅读 <span class="en">Literature Reading</span></h2>
           <p class="reading-intro">此处记录本科期间阅读的学术论文与书籍。<span class="en">Academic papers and books read during undergraduate study.</span></p>
+          <p class="placeholder-text">暂无笔记。<span class="en">No notes yet.</span></p>
+        </div>
+
+        <!-- 讲座笔记 -->
+        <div id="ug-lectures" class="subsection">
+          <h2 class="subsection-title">讲座笔记 <span class="en">Lecture Notes</span></h2>
           <div class="reading-list">
             <div class="reading-entry">
-              <p class="reading-title"><strong>CIM in AI</strong></p>
-              <p class="reading-note">阅读笔记 · 2026.9.18 <span class="en">Reading Notes · September 18, 2026</span></p>
+              <h3 class="reading-title">存算一体在AI中的应用以及未来发展 <span class="en">Applications and Future Development of Computing-in-Memory in AI</span></h3>
+              <p class="reading-note">讲座笔记 · 2026.9.18 <span class="en">Lecture Notes · September 18, 2026</span></p>
               <div class="reading-links">
-                <a href="files/ug/reading/2026-09-18-cim-in-ai.pdf" download="2026.9.18_CIM_in_AI.pdf">📄 下载笔记 <span class="en">Download Notes</span></a>
+                <a href="files/ug/lectures/2026-09-18-cim-in-ai.pdf" download="2026.9.18_存算一体在AI中的应用以及未来发展_讲座笔记.pdf">📄 下载笔记 <span class="en">Download Notes</span></a>
               </div>
             </div>
           </div>
@@ -295,39 +313,37 @@
         <div id="leisure-reading" class="subsection">
           <h1 class="section-title">摸鱼时间 <span class="en">Leisure</span></h1>
           <h2 class="subsection-title">读书笔记 <span class="en">Reading Notes</span></h2>
-          <p class="reading-intro">北京大学本科生刘宇程的读书笔记，由移动端 BooxReader 软件直接导出。<br><span class="en">Reading notes by Yucheng Liu, an undergraduate at Peking University, exported directly from the BooxReader mobile app.</span></p>
+          <p class="reading-intro">读书笔记由移动端 BooxReader 软件直接导出。<br><span class="en">Reading notes exported directly from the BooxReader mobile app.</span></p>
           <div class="book-list">
             <article id="book-animal-farm" class="book-card">
               <div class="book-overview">
                 <img class="book-cover" src="assets/books/animal-farm.jpg" alt="《动物农场》封面 / Animal Farm cover" loading="lazy">
                 <div class="book-info">
-                  <h3 class="book-title">动物农场 <span class="en">Animal Farm</span></h3>
+                  <div class="book-heading">
+                    <h3 class="book-title">动物农场 <span class="en">Animal Farm</span></h3>
+                    <p class="book-author">英国 · 乔治·奥威尔 <span class="en">George Orwell · United Kingdom</span></p>
+                  </div>
                   <p class="book-meta">读书笔记 · 刘宇程 <span class="en">Reading Notes · Yucheng Liu</span></p>
                   <div class="reading-links">
                     <a href="files/leisure/reading/animal-farm.md" download="动物农场_刘宇程读书笔记.md">↓ 下载笔记 <span class="en">Download Markdown</span></a>
                   </div>
                 </div>
               </div>
-              <details class="book-notes" data-source="files/leisure/reading/animal-farm.md">
-                <summary>在线阅读 <span class="en">Read Online</span></summary>
-                <div class="markdown-body" aria-live="polite"></div>
-              </details>
             </article>
             <article id="book-prolegomena" class="book-card">
               <div class="book-overview">
                 <img class="book-cover" src="assets/books/prolegomena.jpg" alt="《未来形而上学导论》封面 / Prolegomena to Any Future Metaphysics cover" loading="lazy">
                 <div class="book-info">
-                  <h3 class="book-title">未来形而上学导论 <span class="en">Prolegomena to Any Future Metaphysics</span></h3>
+                  <div class="book-heading">
+                    <h3 class="book-title">未来形而上学导论 <span class="en">Prolegomena to Any Future Metaphysics</span></h3>
+                    <p class="book-author">德国 · 伊曼努尔·康德 <span class="en">Immanuel Kant · Germany</span></p>
+                  </div>
                   <p class="book-meta">读书笔记 · 刘宇程 <span class="en">Reading Notes · Yucheng Liu</span></p>
                   <div class="reading-links">
                     <a href="files/leisure/reading/prolegomena.md" download="未来形而上学导论_刘宇程读书笔记.md">↓ 下载笔记 <span class="en">Download Markdown</span></a>
                   </div>
                 </div>
               </div>
-              <details class="book-notes" data-source="files/leisure/reading/prolegomena.md">
-                <summary>在线阅读 <span class="en">Read Online</span></summary>
-                <div class="markdown-body" aria-live="polite"></div>
-              </details>
             </article>
           </div>
         </div>
@@ -335,17 +351,9 @@
     </main>
   </div>
 
-  <!-- ==================== 页脚：更新日志 ==================== -->
+  <!-- ==================== 页脚 ==================== -->
   <footer id="footer">
     <div class="footer-inner">
-      <h3>更新日志 <span class="en">Changelog</span></h3>
-      <ul class="changelog">
-        <!-- 最新日志在最上方 -->
-        <li><span class="cl-date">2026.10.2</span> 加入“摸鱼时间”与读书笔记；优化各学期内容布局；补充课程资料与文献阅读；加入微信联系方式。<span class="en">Added Leisure and reading notes; improved semester layouts; updated course materials, literature notes, and WeChat contact.</span></li>
-        <li><span class="cl-date">2026.9.17</span> 主页双语化；大二上笔记改为可折叠文件夹；更新四六级成绩。<span class="en">Added bilingual text and collapsible Year 2 course folders; updated CET scores.</span></li>
-        <li><span class="cl-date">2026.9.17</span> 整理主页结构，加入学习笔记与成绩单，完善个人信息。<span class="en">Organized the homepage; added study notes, transcripts, and profile details.</span></li>
-        <li><span class="cl-date">2026.7.16</span> 个人主页开始施工 🚧 <span class="en">Homepage construction began.</span></li>
-      </ul>
       <p class="footer-copy">© 2026 刘宇程 · Powered by GitHub Pages</p>
     </div>
   </footer>
@@ -362,17 +370,19 @@
         { id: 'intro-about',  label: '关于我 About' },
         { id: 'intro-edu',    label: '教育背景 Education' },
         { id: 'intro-research', label: '研究兴趣 Research' },
-        { id: 'intro-contact',  label: '联系方式 Contact' }
+        { id: 'intro-contact',  label: '联系方式 Contact' },
+        { id: 'intro-changelog', label: '更新日志 Changelog' }
       ],
       undergrad: [
         { id: 'ug-courses',   label: '课程 Courses', children: [
           { id: 'ug-courses-1',  label: '大一上（2025秋） · Year 1 Fall' },
           { id: 'ug-courses-2',  label: '大一下（2026春） · Year 1 Spring' },
-          { id: 'ug-courses-1y', label: '大一学年成绩单 · Year 1 Transcript' },
+          { id: 'ug-courses-1y', label: '大一学年成果 · Year 1 Achievements' },
           { id: 'ug-courses-3',  label: '2026暑假 · Summer 2026' },
           { id: 'ug-courses-4',  label: '大二上（2026秋） · Year 2 Fall' }
         ]},
-        { id: 'ug-reading',   label: '文献阅读 Literature Reading' }
+        { id: 'ug-reading',   label: '文献阅读 Literature Reading' },
+        { id: 'ug-lectures',  label: '讲座笔记 Lecture Notes' }
       ],
       leisure: [
         { id: 'leisure-reading', label: '读书笔记 Reading Notes' },
@@ -641,6 +651,5 @@
     highlightTree('intro-about');
   })();
   </script>
-  <script src="reading.js" defer></script>
 </body>
 </html>
