@@ -1,2 +1,5 @@
 # Local upload inbox; published copies live in assets/ and files/.
 /需要上传的资料/
+
+# Local agent working notes; not part of the published site.
+/.workbuddy/

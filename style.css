@@ -896,6 +896,65 @@ details.folder-group .course-entry {
 }
 
 /* ================================================================ */
+/* 摸鱼时间：园艺心得                                                  */
+/* ================================================================ */
+/* 板块导语较长，英文译文另起一行，避免中英挤成一段 */
+#leisure-gardening .reading-intro .en {
+  display: block;
+  margin: 4px 0 0;
+  font-size: 0.95em;
+  line-height: 1.7;
+}
+
+.garden-entry {
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  scroll-margin-top: calc(var(--nav-height) + 20px);
+}
+
+.garden-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 4px;
+  overflow-wrap: anywhere;
+}
+.garden-title .en {
+  display: block;
+  margin: 3px 0 0;
+  font-size: 0.78em;
+}
+
+.garden-meta {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+.garden-meta .en {
+  display: block;
+  margin-left: 0;
+  font-size: 0.9em;
+}
+
+.garden-desc {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 10px;
+  overflow-wrap: anywhere;
+}
+.garden-desc .en {
+  display: block;
+  margin: 4px 0 0;
+  font-size: 0.92em;
+  line-height: 1.7;
+}
+
+/* ================================================================ */
 /* 研究兴趣正文                                                      */
 /* ================================================================ */
 .research-text {
@@ -1090,4 +1149,6 @@ details.folder-group .course-entry {
   }
   .book-title { font-size: 1rem; }
   details.folder-group > summary { padding: 12px; }
+  .garden-entry { padding: 14px 15px; }
+  .garden-title { font-size: 0.95rem; }
 }
