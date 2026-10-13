@@ -875,6 +875,84 @@ details.folder-group .course-entry {
   font-size: 0.9em;
 }
 
+/* 读书笔记「连载中」徽标：比正文更醒目的实心药丸 */
+.serial-badge {
+  display: inline-block;
+  padding: 0 9px;
+  margin: 0 2px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  line-height: 1.75;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 9px;
+  vertical-align: 1px;
+  box-shadow: 0 1px 2px rgba(107, 139, 107, 0.35);
+}
+
+/* ================================================================
+   摸鱼时间：数码点评                                                 */
+/* ================================================================ */
+/* 「摸鱼时间」总标题已上提为板块直属标题，与下方子版块拉开距离 */
+#sec-leisure > .section-title {
+  margin-bottom: 26px;
+}
+
+.digital-card {
+  display: flex;
+  align-items: stretch;
+  gap: 22px;
+  padding: 20px 22px;
+  max-width: 640px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  color: var(--text-primary);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.digital-card:hover {
+  color: var(--text-primary);
+  border-color: var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.digital-shot {
+  width: 200px;
+  flex-shrink: 0;
+  align-self: center;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg-main);
+  box-shadow: var(--shadow-sm);
+}
+
+.digital-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.digital-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.digital-name .en {
+  display: block;
+  margin: 2px 0 0;
+  font-size: 0.85em;
+}
+
+.digital-link {
+  font-size: 0.82rem;
+  color: var(--link-color);
+  overflow-wrap: anywhere;
+}
+
 /* ================================================================ */
 /* 大二上文件夹分组（旧版，已被 details 版取代，保留兼容）          */
 /* ================================================================ */
@@ -1149,6 +1227,11 @@ details.folder-group .course-entry {
   }
   .book-title { font-size: 1rem; }
   details.folder-group > summary { padding: 12px; }
+  .digital-card {
+    gap: 14px;
+    padding: 16px 14px;
+  }
+  .digital-shot { width: 132px; }
   .garden-entry { padding: 14px 15px; }
   .garden-title { font-size: 0.95rem; }
 }
