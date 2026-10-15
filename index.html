@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal academic homepage">
-  <title>刘宇程 · 个人学术主页 | Academic Homepage</title>
+  <meta name="description" content="刘宇程的个人主页 | Yucheng Liu's personal homepage">
+  <title>刘宇程 · 个人主页 | Personal Homepage</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -120,6 +120,7 @@
           <h2 class="subsection-title">更新日志 <span class="en">Changelog</span></h2>
           <ul class="changelog">
             <!-- 最新日志在最上方 -->
+            <li><span class="cl-date">2026.10.15</span> 新增新生奖学金及大一学年奖学金证明。<span class="en">Added freshman and Year 1 scholarship certificates.</span></li>
             <li><span class="cl-date">2026.10.2</span> 加入“摸鱼时间”与读书笔记；优化各学期内容布局；补充课程资料与讲座笔记；加入微信联系方式。<span class="en">Added Leisure and reading notes; improved semester layouts; updated course materials, lecture notes, and WeChat contact.</span></li>
             <li><span class="cl-date">2026.9.17</span> 主页双语化；大二上笔记改为可折叠文件夹；更新四六级成绩。<span class="en">Added bilingual text and collapsible Year 2 course folders; updated CET scores.</span></li>
             <li><span class="cl-date">2026.9.17</span> 整理主页结构，加入学习笔记与成绩单，完善个人信息。<span class="en">Organized the homepage; added study notes, transcripts, and profile details.</span></li>
@@ -132,6 +133,19 @@
       <!-- 本科阶段                                                       -->
       <!-- ============================================================== -->
       <div id="sec-undergrad" class="section">
+        <!-- 入学时获得的新生奖学金 -->
+        <div id="ug-admission" class="subsection">
+          <h2 class="subsection-title">新生奖学金 <span class="en">Freshman Scholarship</span></h2>
+          <div class="course-list">
+            <div class="course-entry">
+              <h3 class="course-name">新生奖学金（二等）<span class="en">Second-Class Freshman Scholarship</span></h3>
+              <div class="course-links">
+                <a href="files/ug/admission/freshman-scholarship-second-class.pdf" download="新生奖学金_二等.pdf">📄 下载证明 <span class="en">Download Certificate</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- 大一上 -->
         <div id="ug-courses-1" class="subsection">
           <h2 class="subsection-title">大一上（2025 秋）<span class="en">Year 1 · Fall 2025</span></h2>
@@ -187,6 +201,13 @@
               <h3 class="course-name">大一学年（2025–2026）成绩单 <span class="en">Academic Year 2025–2026</span></h3>
               <div class="course-links">
                 <a href="files/ug/y1/transcript.pdf" download="大一学年成绩单.pdf">📋 成绩单 <span class="en">Transcript</span></a>
+              </div>
+            </div>
+            <div class="course-entry">
+              <h3 class="course-name">社会工作奖 · 北京大学三等奖学金 <span class="en">Social Work Award · Peking University Third-Class Scholarship</span></h3>
+              <p class="course-meta">2025–2026 学年 <span class="en">Academic Year 2025–2026</span></p>
+              <div class="course-links">
+                <a href="files/ug/y1/social-work-award-and-third-class-scholarship.pdf" download="社会工作奖&amp;北京大学三等奖学金.pdf">📄 下载证明 <span class="en">Download Certificate</span></a>
               </div>
             </div>
           </div>
@@ -451,6 +472,7 @@
         { id: 'intro-changelog', label: '更新日志 Changelog' }
       ],
       undergrad: [
+        { id: 'ug-admission', label: '新生奖学金 Freshman Scholarship' },
         { id: 'ug-courses',   label: '课程 Courses', children: [
           { id: 'ug-courses-1',  label: '大一上（2025秋） · Year 1 Fall' },
           { id: 'ug-courses-2',  label: '大一下（2026春） · Year 1 Spring' },
