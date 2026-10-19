@@ -26,6 +26,11 @@
   --accent-light: #8faa8f;
   --link-color:   #4a704a;
 
+  /* 暖色点缀：用于「酷安头条」等高亮徽标（Morandi 暖金） */
+  --accent-warm:        #8a6a35;
+  --accent-warm-bg:     #f5eddd;
+  --accent-warm-border: #e3d5b8;
+
   --nav-height:   56px;
   --sidebar-width: 240px;
 
@@ -683,6 +688,24 @@ img {
   border-bottom-color: var(--accent);
 }
 
+/* 文献阅读：论文条目（英文原题为主标题，中文译名换行展示） */
+#ug-reading .reading-title .en {
+  display: block;
+  margin: 3px 0 0;
+  font-size: 0.85em;
+}
+.reading-cite {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+.reading-cite .en {
+  display: block;
+  margin-left: 0;
+  font-size: 0.92em;
+}
+
 /* -------------------- 中英双语辅助样式 -------------------- */
 /* .en：紧跟中文的小号英文，灰色、斜体化处理，避免与中文重叠穿模 */
 .en {
@@ -951,6 +974,131 @@ details.folder-group .course-entry {
   font-size: 0.82rem;
   color: var(--link-color);
   overflow-wrap: anywhere;
+}
+
+/* -------------------- 数码点评：推荐阅读 -------------------- */
+.reco-block {
+  margin-top: 24px;
+}
+
+.reco-heading {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+.reco-heading .en {
+  font-size: 0.85em;
+}
+
+.reco-entry {
+  padding: 16px 20px;
+  max-width: 760px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+}
+
+.reco-heading-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+  margin-bottom: 4px;
+}
+.reco-heading-line > * {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.reco-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* 「已上酷安头条」高亮徽标 */
+.reco-hot {
+  display: inline-block;
+  padding: 0 9px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+  color: var(--accent-warm);
+  background: var(--accent-warm-bg);
+  border: 1px solid var(--accent-warm-border);
+  border-radius: 9px;
+  white-space: nowrap;
+}
+.reco-hot .en {
+  display: none;   /* 徽标内英文在小屏易挤爆，省略，英文全称见下方链接 */
+}
+
+.reco-meta {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+.reco-meta .en {
+  display: block;
+  margin-left: 0;
+  font-size: 0.9em;
+}
+
+/* 长图折叠查看器：默认收起，展开后框内滚动 */
+details.reco-fold {
+  margin: 0 0 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  background: var(--bg-main);
+  overflow: hidden;
+}
+details.reco-fold > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 9px 14px;
+  font-size: 0.85rem;
+  color: var(--link-color);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 8px;
+  transition: background 0.15s;
+  user-select: none;
+}
+details.reco-fold > summary::-webkit-details-marker { display: none; }
+details.reco-fold > summary:hover { background: var(--bg-hover); }
+details.reco-fold > summary .en {
+  font-size: 0.88em;
+  margin-left: 0;
+}
+details.reco-fold > summary::after {
+  content: '▸';
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  transition: transform 0.2s;
+  align-self: center;
+}
+details.reco-fold[open] > summary::after {
+  transform: rotate(90deg);
+}
+
+.reco-scroll {
+  max-height: 68vh;
+  overflow-y: auto;
+  border-top: 1px solid var(--border-light);
+  background: var(--bg-main);
+}
+.reco-scroll img {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 /* ================================================================ */
@@ -1232,6 +1380,8 @@ details.folder-group .course-entry {
     padding: 16px 14px;
   }
   .digital-shot { width: 132px; }
+  .reco-entry { padding: 14px 15px; }
+  .reco-scroll { max-height: 60vh; }
   .garden-entry { padding: 14px 15px; }
   .garden-title { font-size: 0.95rem; }
 }
