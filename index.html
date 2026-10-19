@@ -521,12 +521,14 @@
       ],
       leisure: [
         { id: 'leisure-digital', label: '数码点评 Digital Reviews' },
-        { id: 'leisure-reading', label: '读书笔记 Reading Notes' },
-        { id: 'book-animal-farm', label: '动物农场 Animal Farm' },
-        { id: 'book-prolegomena', label: '未来形而上学导论 Prolegomena to Any Future Metaphysics' },
-        { id: 'leisure-gardening', label: '园艺心得 Gardening Notes' },
-        { id: 'garden-tomato', label: '番茄种植时节 Optimal Sowing Time for Tomato' },
-        { id: 'garden-strawberry', label: '草莓补钙 Calcium Deficiency in Strawberries' }
+        { id: 'leisure-reading', label: '读书笔记 Reading Notes', collapsed: true, children: [
+          { id: 'book-animal-farm', label: '动物农场 Animal Farm' },
+          { id: 'book-prolegomena', label: '未来形而上学导论 Prolegomena to Any Future Metaphysics' }
+        ]},
+        { id: 'leisure-gardening', label: '园艺心得 Gardening Notes', collapsed: true, children: [
+          { id: 'garden-tomato', label: '番茄种植时节 Optimal Sowing Time for Tomato' },
+          { id: 'garden-strawberry', label: '草莓补钙 Calcium Deficiency in Strawberries' }
+        ]}
       ]
     };
 
@@ -561,16 +563,17 @@
         a.dataset.id = item.id;
         a.textContent = item.label;
 
-        // 如果有子项，添加展开/折叠按钮
+        // 如果有子项，添加展开/折叠按钮（item.collapsed 为 true 时默认收起）
         if (item.children && item.children.length > 0) {
           a.classList.add('has-children');
+          const startOpen = !item.collapsed;
           const toggle = document.createElement('span');
-          toggle.className = 'tree-toggle expanded';
-          toggle.innerHTML = '▾';
+          toggle.className = 'tree-toggle' + (startOpen ? ' expanded' : '');
+          toggle.innerHTML = startOpen ? '▾' : '▸';
           a.prepend(toggle);
 
           const ul = document.createElement('ul');
-          ul.className = 'tree-sub expanded';
+          ul.className = 'tree-sub' + (startOpen ? ' expanded' : '');
           item.children.forEach(function(child) {
             const subLi = document.createElement('li');
             subLi.className = 'tree-item tree-item--child';
@@ -735,13 +738,15 @@
     });
 
     function findFirstLeaf(items) {
+      // 优先落在未收起的组上，避免默认收起的文件夹被自动展开
+      var fallback = '';
       for (var i = 0; i < items.length; i++) {
-        if (items[i].children && items[i].children.length > 0) {
-          return items[i].children[0].id;
-        }
-        return items[i].id;
+        var it = items[i];
+        var leaf = (it.children && it.children.length > 0) ? it.children[0].id : it.id;
+        if (!fallback) fallback = leaf;
+        if (!it.collapsed) return leaf;
       }
-      return '';
+      return fallback;
     }
 
     /* ===========================
